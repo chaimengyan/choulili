@@ -1,0 +1,41 @@
+{{ each allMana }}
+<tr>
+    <td>{{$value.nickname}}</td>
+    <td class="username">{{$value.username}}</td>
+    <td class="identity">管理员</td>
+    {{ if $value.status == 1 }}
+    <td>启用</td>
+    {{ else }}
+    <td>禁用</td>
+    {{ /if }}
+    <td id="userUp">
+        <a href="javascript:;" class="icon-bianji glyphicon-edit update"></a>
+        {{ if  $value.username !== manaUser.username}}
+        <a href="javascript:;" class="icon-chacha glyphicon-remove remove" data-toggle="modal" data-target=".confirm-modal"></a>
+        {{ /if }}
+    </td>
+</tr>
+{{ /each }}
+{{ each allUser }}
+<tr>
+
+<td>{{$value.nickname}}</td>
+<td class="username">{{$value.username}}</td>
+
+<td class="identity">普通用户</td>
+
+{{ if $value.status == 1 }}
+    <td>启用</td>
+{{ else }}
+    <td>禁用</td>
+{{ /if }}
+<td id="userUp">
+    <a href="javascript:;" class="icon-bianji glyphicon-edit update"></a>
+    
+    
+    <a href="javascript:;"  class="icon-chacha glyphicon-remove remove" data-toggle="modal" data-target=".confirm-modal"></a>
+    
+    
+</td>
+</tr>
+{{ /each }}
